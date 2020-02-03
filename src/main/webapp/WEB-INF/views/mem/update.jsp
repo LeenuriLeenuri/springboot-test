@@ -51,7 +51,7 @@
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json'
 			}).done(function(){
-				if(result == 'ok'){
+				if(result === 'ok'){
 					alert('회원정보가 수정되었습니다!!');
 				// DML 사용할 때는 ajax에서 직접 페이지 이동해줘야 한다!! (GET 빼고)
 				location.href='/mem';
@@ -76,7 +76,7 @@
 			contentType : 'application/json; charset=utf-8',
 			dataType : 'json'
 		}).done(function(){
-				if(result == 'ok'){
+				if(result === 'ok'){
 					alert('회원정보가 삭제되었습니다!!');
 				location.href='/mem';
 				}else{
