@@ -24,10 +24,10 @@
 	</form>
 	<button id="hello-button-form">hello 페이지 이동 - form, post 방식</button>
 	<br />
-	
+
 	<form>
-		<input type="hidden" id="username" value="love">
-		<input type="hidden" id="phone" value="0102222">
+		<input type="hidden" id="username" value="love"> <input
+			type="hidden" id="phone" value="0102222">
 	</form>
 	<button id="hello-put-button">hello 페이지 이동 - put 방식</button>
 	<br />
@@ -39,71 +39,70 @@
 		// DELETE 호출
 		$('#hello-button').on('click', function() {
 			let data = {
-					id:'ssar'
-					};
-			
+				id : 'ssar'
+			};
+
 			$.ajax({
-				type: 'DELETE',
-					url: '/home/hello',
-					data: JSON.stringify(data),
-					contentType: 'application/json; charset=utf-8',
-					dataType:'json'
+				type : 'DELETE',
+				url : '/home/hello',
+				data : JSON.stringify(data),
+				contentType : 'application/json; charset=utf-8',
+				dataType : 'json'
 			}).done(function(result) {
-				if(result.statusCode == 200){
-						alert('글이 삭제되었습니다.');
-						location.href='/home/hello';
-					}		
+				if (result.statusCode == 200) {
+					alert('글이 삭제되었습니다.');
+					location.href = '/home/hello';
+				}
 			}).fail(function(result) {
-					alert('글 삭제를 실패 했습니다.')
+				alert('글 삭제를 실패 했습니다.')
 			});
 		});
 
 		// POST 호출
 		$('#hello-button-form').on('click', function() {
 			// let id =$('#id').val();
-			let data={
-				id:$('#id').val()
-					};
-			
-			$.ajax({
-				type: 'POST',
-				url: '/home/hello',
-				data: JSON.stringify(data),
-				contentType: 'application/json; charset=utf-8',
-				
-				// 자바스크립트로 파싱해서 던져준다. 이게 없으면 json형식의 String이다.
-				dataType:'json'
-			}).done(function(result) {
-				if(result.statusCode == 200){
-					alert('글이 등록되었습니다.');
-					location.href='/home/hello';
-			}		
-			}).fail(function(result) {
-					alert('글 등록을 실패 했습니다.')
-				});
-			});
+			let data = {
+				id : $('#id').val()
+			};
 
+			$.ajax({
+				type : 'POST',
+				url : '/home/hello',
+				data : JSON.stringify(data),
+				contentType : 'application/json; charset=utf-8',
+
+				// 자바스크립트로 파싱해서 던져준다. 이게 없으면 json형식의 String이다.
+				dataType : 'json'
+			}).done(function(result) {
+				if (result.statusCode == 200) {
+					alert('글이 등록되었습니다.');
+					location.href = '/home/hello';
+				}
+			}).fail(function(result) {
+				alert('글 등록을 실패 했습니다.')
+			});
+		});
 
 		// PUT 호출
 		$('#hello-put-button').on('click', function() {
 			let data = {
-					username: $('#username').val(),
-					phone: $('#phone').val()
-					};
-			
+				username : $('#username').val(),
+				phone : $('#phone').val()
+			};
+
 			$.ajax({
-				type: 'PUT',
-					url: '/home/hello',
-					data: JSON.stringify(data),
-					contentType: 'application/json; charset=utf-8',
-					dataType:'json'
+				type : 'PUT',
+				url : '/home/hello',
+				data : JSON.stringify(data),
+				contentType : 'application/json; charset=utf-8',
+				dataType : 'json'
 			}).done(function(result) {
-				if(result.statusCode == 200){
-						alert('글이 수정되었습니다.');
-						location.href='/home/hello';
-					}		
+				if (result.statusCode == 200) {
+					alert('글이 수정되었습니다.');
+					location.href = '/home/hello';
+				}
 			}).fail(function(result) {
-					alert('글 수정을 실패 했습니다.')
+				alert('글 수정을 실패 했습니다.')
 			});
 		});
 	</script>
