@@ -20,7 +20,7 @@
 			<td><input id="email" type="email"></td>
 		</tr>
 	</table>
-	<button id="mem_join_proc">수정하기</button>
+	<button id="mem_join_proc">가입하기</button>
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -41,7 +41,7 @@
 			contentType : 'application/json; charset=utf-8',
 			dataType : 'json'
 		}).done(function(){
-				if(result == 'ok'){
+				if(result.msg === 'ok'){
 					alert('회원정보가 삭제되었습니다!!');
 				location.href='/mem';
 				}else{

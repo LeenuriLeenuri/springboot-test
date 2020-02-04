@@ -11,6 +11,8 @@
 </head>
 <body>
 
+<img src="/media/pic_1.jpg" />
+
 	<table border="1">
 		<tr>
 			<th>username</th>
